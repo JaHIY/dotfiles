@@ -1,0 +1,68 @@
+!Molokai theme
+xterm*background: #000000
+xterm*foreground: #F8F8F2
+xterm*cursorColor: #F8F8F2
+
+!Black
+xterm*color0: #000000
+xterm*color8: #000000
+
+!Red
+xterm*color1: #E52222
+xterm*color9: #E52222
+
+!Green
+xterm*color2: #A6E22E
+xterm*color10: #A6E22E
+
+!Yellow
+xterm*color3: #FD971F
+xterm*color11: #FD971F
+
+!Blue
+xterm*color4: #A6E22E
+xterm*color12: #A6E22E
+
+!Magenta
+xterm*color5: #F92672
+xterm*color13: #F92672
+
+!Cyan
+xterm*color6: #66D9EF
+xterm*color14: #66D9EF
+
+!White
+xterm*color7: #F8F8F2
+xterm*color15: #F8F8F2
+
+
+xterm*termName: xterm-256color
+
+!xterm*faceName: Monaco:antialias=true:pixelsize=13
+xterm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
+xterm*faceNameDoublesize: Source Han Sans HW:antialias=true:pixelsize=13
+xterm*xftAntialias: true
+xterm*dynamicColors: true
+
+xterm*utf8: 1
+xterm*locale: true
+xterm*utf8Title: true
+xterm*renderFont: true
+xterm*preeditType: Root
+xterm*saveLines: 4096
+
+!fix alt key input
+xterm*eightBitInput: false
+xterm*metaSendEscape: true
+
+!fix backspace in vim
+xterm.*backarrowKey: false
+
+xterm*scrollTtyKeypress: true
+xterm*scrollTtyOutput: false
+xterm*scrollBar: true
+xterm*rightScrollBar: true
+xterm*jumpScroll: true
+xterm*multiScroll: true
+xterm*toolBar: false
+

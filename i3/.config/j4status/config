@@ -1,0 +1,60 @@
+[Plugins]
+Output = i3bar
+Input = nl;sensors;cpu;mem;fsinfo;alsa;time;
+
+[Netlink]
+Interfaces = enp2s0;
+
+[Time]
+Format = %F %a %T
+
+[Override cpu]
+Label = cpu
+
+[Override mem]
+Label = mem
+
+[Sensors]
+Sensors = coretemp-isa-0000
+
+[Override sensors:coretemp-isa-0000/temp1]
+Disable = true
+
+[Override sensors:coretemp-isa-0000/temp2]
+Label =
+
+[Override sensors:coretemp-isa-0000/temp3]
+Label =
+
+[Override sensors:coretemp-isa-0000/temp4]
+Label =
+
+[Override sensors:coretemp-isa-0000/temp5]
+Label =
+
+[Filesystem]
+Names = root;var;home;
+
+[Filesystem root]
+Mountpoint = /
+
+[Override fsinfo:root]
+Label = /
+
+[Filesystem var]
+Mountpoint = /var
+
+[Override fsinfo:var]
+Label = /var
+
+[Filesystem home]
+Mountpoint = /home
+
+[Override fsinfo:home]
+Label = /home
+
+[ALSA]
+Cards = default;
+
+[Override alsa:default]
+Label = vol
