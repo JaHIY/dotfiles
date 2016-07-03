@@ -17,7 +17,7 @@ zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/copydir", from:oh-my-zsh
 zplug "plugins/copyfile", from:oh-my-zsh
-zplug "plugins/cpv", from:oh-my-zsh
+zplug "plugins/cp", from:oh-my-zsh
 zplug "plugins/cpanm", from:oh-my-zsh, if:"(( $+commands[cpanm] ))"
 zplug "plugins/emoji-clock", from:oh-my-zsh
 zplug "plugins/emoji", from:oh-my-zsh
