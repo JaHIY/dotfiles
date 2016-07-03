@@ -4,36 +4,36 @@ xterm*foreground: #F8F8F2
 xterm*cursorColor: #F8F8F2
 
 !Black
-xterm*color0: #262626
-xterm*color8: #000000
+xterm*color0: #000000
+xterm*color8: #262626
 
 !Red
-xterm*color1: #E52222
-xterm*color9: #A01313
+xterm*color1: #CD1818
+xterm*color9: #E52222
 
 !Green
-xterm*color2: #A6E22E
-xterm*color10: #709D15
+xterm*color2: #90CA1C
+xterm*color10: #A6E22E
 
 !Yellow
-xterm*color3: #FD971F
-xterm*color11: #B15F02
+xterm*color3: #E37A02
+xterm*color11: #FD971F
 
 !Blue
-xterm*color4: #5F5FEE
-xterm*color12: #1111A2
+xterm*color4: #6F00E6
+xterm*color12: #C48DFF
 
 !Magenta
-xterm*color5: #F92672
-xterm*color13: #AE0443
+xterm*color5: #E00656
+xterm*color13: #F92672
 
 !Cyan
-xterm*color6: #66D9EF
-xterm*color14: #1189A2
+xterm*color6: #16B1D0
+xterm*color14: #66D9EF
 
 !White
-xterm*color7: #F8F8F2
-xterm*color15: #E4E4CE
+xterm*color7: #E4E4CE
+xterm*color15: #F8F8F2
 
 
 xterm*termName: xterm-256color
