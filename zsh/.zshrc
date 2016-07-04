@@ -29,7 +29,7 @@ zplug "plugins/golang", from:oh-my-zsh, if:"(( $+commands[go] ))"
 zplug "plugins/gradle", from:oh-my-zsh, if:"(( $+commands[gradle] ))"
 zplug "plugins/httpie", from:oh-my-zsh, if:"(( $+commands[httpie] ))"
 zplug "plugins/jsontools", from:oh-my-zsh
-zplug "plugins/lein", from:oh-my-zsh, if:"(( $+commands[lein] ))"
+zplug "plugins/lein", from:oh-my-zsh, if:"(( $+commands[lein] ))", nice:10
 zplug "plugins/mercurial", from:oh-my-zsh, if:"(( $+commands[hg] ))"
 zplug "plugins/npm", from:oh-my-zsh, if:"(( $+commands[npm] ))"
 zplug "plugins/perl", from:oh-my-zsh, if:"(( $+commands[perl] ))"
