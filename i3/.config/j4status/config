@@ -1,9 +1,9 @@
 [Plugins]
 Output = i3bar
-Input = nl;sensors;cpu;mem;fsinfo;alsa;time;
+Input = nm;sensors;cpu;mem;fsinfo;alsa;backlight;upower;time;
 
-[Netlink]
-Interfaces = enp2s0;
+[NetworkManager]
+Interfaces = enp2s0;enp0s25;wlp4s0;
 
 [Time]
 Format = %F %a %T
@@ -58,3 +58,6 @@ Cards = default;
 
 [Override alsa:default]
 Label = vol
+
+[Override backlight]
+Label = Bl
