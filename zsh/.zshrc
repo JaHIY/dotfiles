@@ -25,7 +25,7 @@ zplug "plugins/encode64", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))", nice:10
 zplug "plugins/gnu-utils", from:oh-my-zsh
-zplug "plugins/golang", from:oh-my-zsh, if:"(( $+commands[go] ))"
+zplug "plugins/golang", from:oh-my-zsh, if:"(( $+commands[go] ))", nice:10
 zplug "plugins/gradle", from:oh-my-zsh, if:"(( $+commands[gradle] ))"
 zplug "plugins/httpie", from:oh-my-zsh, if:"(( $+commands[httpie] ))"
 zplug "plugins/jsontools", from:oh-my-zsh
