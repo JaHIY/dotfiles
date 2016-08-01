@@ -9,12 +9,11 @@ Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-
 Plug 'yko/mojo.vim'
-
 Plug 'wlangstroth/vim-racket'
+Plug 'elixir-lang/vim-elixir'
+Plug 'elmcast/elm-vim'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
