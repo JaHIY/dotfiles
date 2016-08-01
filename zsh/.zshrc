@@ -1,3 +1,8 @@
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
 #oh-my-zsh
 export ZSH="$HOME/.zplug/repos/robbyrussell/oh-my-zsh"
 find "$ZSH/lib" -type f -iregex '.*\.zsh' -print0 | \
