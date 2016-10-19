@@ -39,10 +39,13 @@ xterm*color15: #F8F8F2
 xterm*termName: xterm-256color
 
 !xterm*faceName: Monaco:antialias=true:pixelsize=13
-xterm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
-xterm*faceNameDoublesize: Source Han Sans HW:antialias=true:pixelsize=13
+xterm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=14
+xterm*faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=12
 xterm*xftAntialias: true
 xterm*dynamicColors: true
+
+!fix bug when font is set to DejaVu Sans Mono:14
+xterm*scaleHeight: 1.01
 
 xterm*utf8: 1
 xterm*locale: true
