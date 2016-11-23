@@ -1,6 +1,7 @@
 [Plugins]
 Output = i3bar
-Input = nm;sensors;cpu;mem;fsinfo;alsa;backlight;upower;time;
+Input = nm;sensors;cpu;mem;fsinfo;pulseaudio;upower;time;
+Order = nm;sensors;cpu;mem;fsinfo;pulseaudio;upower-battery;time;
 
 [NetworkManager]
 Interfaces = enp2s0;enp0s25;wlp4s0;
@@ -53,10 +54,10 @@ Mountpoint = /home
 [Override fsinfo:home]
 Label = /home
 
-[ALSA]
-Cards = default;
+[PulseAudio]
+Actions=mouse:1 mute toggle;mouse:4 raise;mouse:5 lower;
 
-[Override alsa:default]
+[Override pulseaudio:alsa_output.pci-0000_00_1f.3.analog-stereo]
 Label = vol
 
 [Override backlight]
