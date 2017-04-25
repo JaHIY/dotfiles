@@ -61,7 +61,7 @@ zplug 'zsh-users/zsh-history-substring-search', defer:2
 
 zplug 'JaHIY/zsh-theme-verse', as:theme
 
-zplug 'zplug/zplug'
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
