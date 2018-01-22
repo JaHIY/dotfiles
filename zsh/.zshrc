@@ -58,6 +58,8 @@ zplug 'plugins/zsh_reload', from:oh-my-zsh
 
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'zsh-users/zsh-history-substring-search', defer:2
+zplug 'zsh-users/zsh-autosuggestions', defer:2
+zplug 'zsh-users/zsh-completions', defer:2
 
 zplug 'JaHIY/zsh-theme-verse', as:theme
 
@@ -73,3 +75,5 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
+
+autoload -U compinit && compinit
