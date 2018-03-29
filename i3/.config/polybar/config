@@ -504,7 +504,7 @@ label = RAM %gb_used%/%gb_total%
 
 ; Only applies if <bar-used> is used
 bar-used-indicator =
-bar-used-width = 10
+bar-used-width = 7
 bar-used-foreground-0 = #55aa55
 bar-used-foreground-1 = #557755
 bar-used-foreground-2 = #f5a70a
