@@ -14,6 +14,7 @@ Plug 'yko/mojo.vim'
 Plug 'wlangstroth/vim-racket'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
+Plug 'lervag/vimtex'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
@@ -388,3 +389,16 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 
 " vim-perl
 au BufNewFile,BufRead *.tt setf tt2html
+
+" vimtex
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-xelatex',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
