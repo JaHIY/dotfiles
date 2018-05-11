@@ -15,6 +15,7 @@ Plug 'wlangstroth/vim-racket'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'lervag/vimtex'
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
