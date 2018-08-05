@@ -16,6 +16,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'lervag/vimtex'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
