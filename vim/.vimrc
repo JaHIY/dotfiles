@@ -18,6 +18,7 @@ Plug 'lervag/vimtex'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'posva/vim-vue'
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
