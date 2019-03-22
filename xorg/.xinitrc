@@ -41,4 +41,6 @@ fi
 
 numlockx &
 
+udiskie --tray &
+
 exec i3
