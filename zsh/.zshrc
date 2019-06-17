@@ -3,13 +3,6 @@ if [ -d "$HOME/bin" ]; then
     export PATH="$HOME/bin:$PATH"
 fi
 
-#oh-my-zsh
-export ZSH="$HOME/.zplug/repos/robbyrussell/oh-my-zsh"
-find "$ZSH/lib" -type f -iregex '.*\.zsh' -print0 | sort -z | \
-    while IFS='' read -r -d $'\0' config_file; do
-        source "$config_file"
-    done
-
 #zplug
 source "$HOME/.zplug/init.zsh"
 
