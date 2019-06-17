@@ -363,12 +363,6 @@ nnoremap <s-l> :bnext<cr>
 nnoremap <s-j> :tabnext<cr>
 nnoremap <s-k> :tabprev<cr>
 
-" 插入模式下上下左右移动光标
-inoremap <c-h> <left>
-inoremap <c-l> <right>
-inoremap <c-j> <c-o>gj
-inoremap <c-k> <c-o>gk
-
 "一些不错的映射转换语法（如果在一个文件中混合了不同语言时有用）
 nnoremap <leader>1 :set filetype=xhtml<cr>
 nnoremap <leader>2 :set filetype=css<cr>
