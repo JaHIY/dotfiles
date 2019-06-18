@@ -127,7 +127,7 @@ set autoread " 当文件在外部被修改，自动更新该文件
 
 " 设置leader为,
 "let mapleader=","
-"let g:mapleader=","
+"noremap \ ,
 
 " 检测文件类型
 filetype plugin indent on
