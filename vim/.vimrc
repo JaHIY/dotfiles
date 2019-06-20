@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -19,6 +18,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'posva/vim-vue'
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
@@ -44,18 +44,6 @@ syntax on
 " 设定配色方案
 let g:molokai_original=1
 color molokai
-
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"    let g:solarized_termcolors=256
-"    let g:solarized_termtrans=1
-"endif
-"
-"color solarized
-
-"color monokai2
 
 " 设置右下角标尺
 set ruler
@@ -153,8 +141,11 @@ set cmdheight=1
 " 显示状态栏 (默认值为 1, 无法显示状态栏)
 set laststatus=2
 
-"显示括号配对情况
+" 显示括号配对情况
 set showmatch
+
+" （在右下角）显示现有的命令
+set showcmd
 
 " 解决自动换行格式下, 如高度在折行之后超过窗口高度结果这一行看不到的问题
 set display=lastline
@@ -184,30 +175,6 @@ set shortmess=atl
 "slash      转换文件路径中的\为/以使session文件兼容unix
 "unix       设置session文件中的换行模式为unix
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,slash,unix,resize
-
-" 跳过页头注释，到首行实际代码
-func! GotoFirstEffectiveLine()
-    let l:c = 0
-    while l:c<line("$") && (
-                \ getline(l:c) =~ '^\s*$'
-                \ || synIDattr(synID(l:c, 1, 0), "name") =~ ".*Comment.*"
-                \ || synIDattr(synID(l:c, 1, 0), "name") =~ ".*PreProc$"
-                \ )
-        let l:c = l:c+1
-    endwhile
-    exe "normal ".l:c."Gz\<CR>"
-endf
-
-" 返回当前时期
-func! GetDateStamp()
-    return strftime('%Y-%m-%d')
-endfunction
-
-" 全选
-func! SelectAll()
-    let s:current = line('.')
-    exe "norm gg" . (&slm == "" ? "VG" : "gH\<C-O>G")
-endfunc
 
 " {{{ 开始折叠
 set foldenable
@@ -243,17 +210,6 @@ set foldexpr=1
 autocmd! BufNewFile,BufRead * setlocal nofoldenable
 
 " }}}
-
-" Alt-W切换自动换行
-noremap <a-w> :exe &wrap==1 ? 'set nowrap' : 'set wrap'<cr>
-
-" 选中状态下 Ctrl+c 复制
-vnoremap <c-c> "+y
-
-" Shift + Delete 插入系统剪切板中的内容
-noremap <S-Del> "+p
-inoremap <S-Del> <esc>"+pa
-vnoremap <S-Del> d"+P
 
 if has("gui_running")
     set guioptions-=m " 隐藏菜单栏
@@ -295,31 +251,6 @@ if has("gui_running")
     endif
 endif
 
-" F2切换工具栏
-map <silent> <F2> :if &guioptions =~# 'T' <bar>
-        \set guioptions-=T <bar>
-    \else <bar>
-        \set guioptions+=T <bar>
-    \endif<cr>
-
-"编辑vim配置文件
-if has("unix")
-    set fileformats=unix,dos,mac
-    nmap <leader>e :tabnew $HOME/.vimrc<cr>
-    let $VIMFILES = $HOME."/.vim"
-else
-    set fileformats=dos,unix,mac
-    nmap <leader>e :tabnew $VIM/_vimrc<cr>
-    let $VIMFILES = $VIM."/vimfiles"
-endif
-
-" Alt-Space is System menu
-if has("gui")
-  noremap <m-space> :simalt ~<cr>
-  inoremap <m-space> <c-o>:simalt ~<cr>
-  cnoremap <m-space> <c-c>:simalt ~<cr>
-endif
-
 " {{{ 编码字体设置
 if has("multi_byte")
     set encoding=utf-8
@@ -348,35 +279,11 @@ set fileencoding=utf-8
 set ambiwidth=double
 " }}}
 
-" 删除所有行未尾空格
-nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
-
-" 窗口切换
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-
-" Buffers/Tab操作快捷方式!
-nnoremap <s-h> :bprevious<cr>
-nnoremap <s-l> :bnext<cr>
-nnoremap <s-j> :tabnext<cr>
-nnoremap <s-k> :tabprev<cr>
-
-"一些不错的映射转换语法（如果在一个文件中混合了不同语言时有用）
-nnoremap <leader>1 :set filetype=xhtml<cr>
-nnoremap <leader>2 :set filetype=css<cr>
-nnoremap <leader>3 :set filetype=javascript<cr>
-nnoremap <leader>4 :set filetype=tt2html<cr>
-nnoremap <leader>4 :set filetype=html.epl<cr>
-
 " nerdtree
 let g:NERDTreeWinSize=25
 let g:NERDTreeMinimalUI=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap nc :NERDTreeTabsToggle<cr>
-
-nmap ,, :%!perltidy<cr>
 
 " emmet-vim
 let g:user_emmet_install_global = 0
