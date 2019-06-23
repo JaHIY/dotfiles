@@ -49,6 +49,7 @@ zplug 'plugins/torrent', from:oh-my-zsh
 zplug 'plugins/urltools', from:oh-my-zsh
 zplug 'plugins/zsh_reload', from:oh-my-zsh
 
+zplug 'robbyrussell/oh-my-zsh', as:plugin, use:'lib/*.zsh'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'zsh-users/zsh-history-substring-search', defer:2
 zplug 'zsh-users/zsh-autosuggestions', defer:2
