@@ -37,6 +37,10 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" https://vim.fandom.com/wiki/Recover_from_accidental_Ctrl-U
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
 " 显示行号
 set number
 
@@ -112,12 +116,6 @@ set mouse=a
 
 " 自动重新读入
 set autoread " 当文件在外部被修改，自动更新该文件
-
-"set lines=40 columns=100
-
-" 设置leader为,
-"let mapleader=","
-"noremap \ ,
 
 " 检测文件类型
 filetype plugin indent on
