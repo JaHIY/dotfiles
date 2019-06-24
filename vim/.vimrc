@@ -19,11 +19,14 @@ Plug 'posva/vim-vue'
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
 delc PlugUpgrade
 
+packadd! matchit
 
 " 屏蔽方向键
 nnoremap <up> <nop>
