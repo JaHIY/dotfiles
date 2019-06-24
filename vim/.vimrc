@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tomasr/molokai'
-Plug 'mattn/emmet-vim'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'yko/mojo.vim'
@@ -287,13 +286,6 @@ let g:NERDTreeWinSize=25
 let g:NERDTreeMinimalUI=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap nc :NERDTreeTabsToggle<cr>
-
-" emmet-vim
-let g:user_emmet_install_global = 0
-autocmd FileType xhtml,html,css EmmetInstall
-"only enable normal mode functions
-let g:user_emmet_mode='a'
-let g:user_emmet_expandabbr_key = '<c-e>'
 
 " vim-perl
 au BufNewFile,BufRead *.tt setf tt2html
