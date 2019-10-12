@@ -20,6 +20,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'zah/nim.vim'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
