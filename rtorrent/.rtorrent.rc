@@ -40,6 +40,11 @@ protocol.pex.set = yes
 
 trackers.use_udp.set = yes
 
+# Adding public DHT servers for easy bootstrapping
+schedule2 = dht_node_1, 5, 0, "dht.add_node=router.utorrent.com:6881"
+schedule2 = dht_node_2, 5, 0, "dht.add_node=dht.transmissionbt.com:6881"
+schedule2 = dht_node_3, 5, 0, "dht.add_node=router.bitcomet.com:6881"
+schedule2 = dht_node_4, 5, 0, "dht.add_node=dht.aelitis.com:6881"
 
 ## Peer settings
 throttle.max_uploads.set = 100
@@ -130,24 +135,24 @@ schedule2 = watch_start, 10, 10, ((load.start_verbose, (cat, (cfg.watch), "*.tor
 #log.add_output = "tracker_debug", "log"
 
 method.set_key=event.download.inserted_new,add_all_trackers001,"d.tracker.insert=\"1\",\"udp://tracker.coppersurfer.tk:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers002,"d.tracker.insert=\"2\",\"udp://tracker.pirateparty.gr:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers003,"d.tracker.insert=\"3\",\"udp://public.popcorn-tracker.org:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers004,"d.tracker.insert=\"4\",\"http://tracker.opentrackr.org:1337/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers005,"d.tracker.insert=\"5\",\"http://ipv4.tracker.harry.lu:80/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers006,"d.tracker.insert=\"6\",\"udp://tracker.zer0day.to:1337/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers007,"d.tracker.insert=\"7\",\"udp://tracker.opentrackr.org:1337/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers008,"d.tracker.insert=\"8\",\"udp://ipv4.tracker.harry.lu:80/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers009,"d.tracker.insert=\"9\",\"udp://p4p.arenabg.com:1337/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers010,"d.tracker.insert=\"10\",\"http://tracker.dler.org:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers011,"d.tracker.insert=\"11\",\"udp://explodie.org:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers012,"d.tracker.insert=\"12\",\"http://explodie.org:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers013,"d.tracker.insert=\"13\",\"http://mgtracker.org:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers014,"d.tracker.insert=\"14\",\"udp://tracker.mg64.net:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers015,"d.tracker.insert=\"15\",\"http://tracker.mg64.net:6881/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers016,"d.tracker.insert=\"16\",\"udp://mgtracker.org:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers017,"d.tracker.insert=\"17\",\"udp://tracker2.wasabii.com.tw:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers018,"d.tracker.insert=\"18\",\"udp://tracker1.wasabii.com.tw:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers019,"d.tracker.insert=\"19\",\"http://tracker2.wasabii.com.tw:6969/announce\""
-method.set_key=event.download.inserted_new,add_all_trackers020,"d.tracker.insert=\"20\",\"http://tracker1.wasabii.com.tw:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers002,"d.tracker.insert=\"2\",\"udp://tracker.leechers-paradise.org:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers003,"d.tracker.insert=\"3\",\"udp://tracker.opentrackr.org:1337/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers004,"d.tracker.insert=\"4\",\"udp://tracker.pomf.se:80/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers005,"d.tracker.insert=\"5\",\"udp://tracker.openbittorrent.com:80/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers006,"d.tracker.insert=\"6\",\"udp://p4p.arenabg.com:1337/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers007,"d.tracker.insert=\"7\",\"udp://9.rarbg.me:2710/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers008,"d.tracker.insert=\"8\",\"udp://9.rarbg.to:2710/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers009,"d.tracker.insert=\"9\",\"udp://exodus.desync.com:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers010,"d.tracker.insert=\"10\",\"udp://tracker.tiny-vps.com:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers011,"d.tracker.insert=\"11\",\"udp://retracker.lanta-net.ru:2710/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers012,"d.tracker.insert=\"12\",\"udp://open.stealth.si:80/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers013,"d.tracker.insert=\"13\",\"udp://tracker.torrent.eu.org:451/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers014,"d.tracker.insert=\"14\",\"udp://tracker.moeking.me:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers015,"d.tracker.insert=\"15\",\"udp://tracker.cyberia.is:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers016,"d.tracker.insert=\"16\",\"udp://denis.stalker.upeer.me:6969/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers017,"d.tracker.insert=\"17\",\"udp://open.demonii.si:1337/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers018,"d.tracker.insert=\"18\",\"udp://ipv4.tracker.harry.lu:80/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers019,"d.tracker.insert=\"19\",\"udp://xxxtor.com:2710/announce\""
+method.set_key=event.download.inserted_new,add_all_trackers020,"d.tracker.insert=\"20\",\"udp://valakas.rollo.dnsabr.com:2710/announce\""
 
 ### END of rtorrent.rc ###
