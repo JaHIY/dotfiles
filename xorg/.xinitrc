@@ -39,6 +39,12 @@ if [ -d "$HOME/.xinitrc.d" ] ; then
  unset f
 fi
 
+# Make sure this is before the 'exec' command or it won't be sourced.
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
+
+xcompmgr -c &
+
 numlockx &
 
 udiskie --tray &
