@@ -6,6 +6,8 @@ fi
 #zinit
 source "$HOME/.zinit/bin/zinit.zsh"
 
+setopt promptsubst
+
 zinit snippet 'OMZ::lib/bzr.zsh'
 zinit snippet 'OMZ::lib/clipboard.zsh'
 zinit snippet 'OMZ::lib/compfix.zsh'
@@ -25,102 +27,124 @@ zinit snippet 'OMZ::lib/spectrum.zsh'
 zinit snippet 'OMZ::lib/termsupport.zsh'
 zinit snippet 'OMZ::lib/theme-and-appearance.zsh'
 
-zinit ice as"completion" if'(( $+commands[adb] ))'
+zinit ice wait as'completion' if'(( $+commands[adb] ))' lucid
 zinit snippet 'OMZ::plugins/adb/_adb'
 
-zinit ice if'(( $+commands[ant] ))'
+zinit ice wait if'(( $+commands[ant] ))' lucid
 zinit snippet 'OMZ::plugins/ant/ant.plugin.zsh'
 
-zinit ice if"grep -s -q -F 'Arch Linux' /etc/os-release"
+zinit ice wait if"grep -s -q -F 'Arch Linux' /etc/os-release" lucid
 zinit snippet 'OMZ::plugins/archlinux/archlinux.plugin.zsh'
 
-zinit ice if'(( $+commands[convert] ))'
-zinit snippet 'OMZ::plugins/catimg/catimg.plugin.zsh'
+zinit ice wait svn if'(( $+commands[convert] ))' lucid
+zinit snippet 'OMZ::plugins/catimg'
 
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/command-not-found/command-not-found.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/common-aliases/common-aliases.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/copydir/copydir.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/copyfile/copyfile.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/cp/cp.plugin.zsh'
 
-zinit ice if'(( $+commands[cpanm] ))'
+zinit ice wait if'(( $+commands[cpanm] ))' lucid
 zinit snippet 'OMZ::plugins/cpanm/cpanm.plugin.zsh'
 
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/encode64/encode64.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/extract/extract.plugin.zsh'
 
-zinit ice if'(( $+commands[git] ))'
+zinit ice wait if'(( $+commands[git] ))' lucid
 zinit snippet 'OMZ::plugins/git/git.plugin.zsh'
 
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/gnu-utils/gnu-utils.plugin.zsh'
 
-zinit ice if'(( $+commands[go] ))'
+zinit ice wait if'(( $+commands[go] ))' lucid
 zinit snippet 'OMZ::plugins/golang/golang.plugin.zsh'
 
-zinit ice if'(( $+commands[gradle] ))'
+zinit ice wait if'(( $+commands[gradle] ))' lucid
 zinit snippet 'OMZ::plugins/gradle/gradle.plugin.zsh'
 
-zinit ice if'(( $+commands[httpie] ))'
+zinit ice wait if'(( $+commands[httpie] ))' lucid
 zinit snippet 'OMZ::plugins/httpie/httpie.plugin.zsh'
 
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/jsontools/jsontools.plugin.zsh'
 
-zinit ice as"completion" if'(( $+commands[lein] ))'
+zinit ice wait as'completion' if'(( $+commands[lein] ))' lucid
 zinit snippet 'OMZ::plugins/lein/_lein'
 
-zinit ice if'(( $+commands[hg] ))'
+zinit ice wait if'(( $+commands[hg] ))' lucid
 zinit snippet 'OMZ::plugins/mercurial/mercurial.plugin.zsh'
 
-zinit ice if'(( $+commands[npm] ))'
+zinit ice wait if'(( $+commands[npm] ))' lucid
 zinit snippet 'OMZ::plugins/npm/npm.plugin.zsh'
 
-zinit ice if'(( $+commands[perl] ))'
+zinit ice wait if'(( $+commands[perl] ))' lucid
 zinit snippet 'OMZ::plugins/perl/perl.plugin.zsh'
 
-zinit ice if'(( $+commands[python] ))'
+zinit ice wait if'(( $+commands[python] ))' lucid
 zinit snippet 'OMZ::plugins/python/python.plugin.zsh'
 
-zinit ice if'(( $+commands[rebar] ))'
+zinit ice wait if'(( $+commands[rebar] ))' lucid
 zinit snippet 'OMZ::plugins/rebar/rebar.plugin.zsh'
 
-zinit ice if'(( $+commands[rsync] ))'
+zinit ice wait if'(( $+commands[rsync] ))' lucid
 zinit snippet 'OMZ::plugins/rsync/rsync.plugin.zsh'
 
-zinit ice if'(( $+commands[ruby] ))'
+zinit ice wait if'(( $+commands[ruby] ))' lucid
 zinit snippet 'OMZ::plugins/ruby/ruby.plugin.zsh'
 
-zinit ice as"completion" if'(( $+commands[rustc] ))'
+zinit ice wait as'completion' if'(( $+commands[rustc] ))' lucid
 zinit snippet 'OMZ::plugins/rust/_rust'
 
-zinit ice if'(( $+commands[rvm] ))'
+zinit ice wait if'(( $+commands[rvm] ))' lucid
 zinit snippet 'OMZ::plugins/rvm/rvm.plugin.zsh'
 
-zinit ice if'(( $+commands[sbt] ))'
+zinit ice wait if'(( $+commands[sbt] ))' lucid
 zinit snippet 'OMZ::plugins/sbt/sbt.plugin.zsh'
 
-zinit ice as"completion" if'(( $+commands[scala] ))'
+zinit ice wait as'completion' if'(( $+commands[scala] ))' lucid
 zinit snippet 'OMZ::plugins/scala/_scala'
 
-zinit ice if'(( $+commands[screen] ))'
+zinit ice wait if'(( $+commands[screen] ))' lucid
 zinit snippet 'OMZ::plugins/screen/screen.plugin.zsh'
 
-zinit ice if'(( $+commands[sudo] ))'
+zinit ice wait if'(( $+commands[sudo] ))' lucid
 zinit snippet 'OMZ::plugins/sudo/sudo.plugin.zsh'
 
-zinit ice if'(( $+commands[svn] ))'
+zinit ice wait if'(( $+commands[svn] ))' lucid
 zinit snippet 'OMZ::plugins/svn/svn.plugin.zsh'
 
-zinit ice if'(( $+commands[systemctl] ))'
+zinit ice wait if'(( $+commands[systemctl] ))' lucid
 zinit snippet 'OMZ::plugins/systemd/systemd.plugin.zsh'
 
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/themes/themes.plugin.zsh'
 
-zinit ice svn if'(( $+commands[tmux] ))'
+zinit ice wait svn if'(( $+commands[tmux] ))' lucid
 zinit snippet 'OMZ::plugins/tmux'
 
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/torrent/torrent.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/urltools/urltools.plugin.zsh'
+
+zinit ice wait lucid
 zinit snippet 'OMZ::plugins/zsh_reload/zsh_reload.plugin.zsh'
 
 zinit ice pick'async.zsh' src'pure.zsh'
@@ -140,7 +164,14 @@ zstyle ':prompt:pure:user' color magenta
 zstyle ':prompt:pure:user:root' color red
 zstyle ':prompt:pure:virtualenv' color default
 
+zinit ice wait lucid
 zinit light 'zsh-users/zsh-history-substring-search'
+
+zinit ice wait atload'_zsh_autosuggest_start' lucid
 zinit light 'zsh-users/zsh-autosuggestions'
+
+zinit ice wait atload'zicompinit; zicdreplay' blockf lucid
 zinit light 'zsh-users/zsh-completions'
+
+zinit ice wait atinit'zpcompinit' lucid
 zinit light 'zsh-users/zsh-syntax-highlighting'
