@@ -36,9 +36,6 @@ zinit snippet 'OMZ::plugins/ant/ant.plugin.zsh'
 zinit ice wait if"grep -s -q -F 'Arch Linux' /etc/os-release" lucid
 zinit snippet 'OMZ::plugins/archlinux/archlinux.plugin.zsh'
 
-zinit ice wait svn if'(( $+commands[convert] ))' lucid
-zinit snippet 'OMZ::plugins/catimg'
-
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh'
 
@@ -99,8 +96,8 @@ zinit snippet 'OMZ::plugins/perl/perl.plugin.zsh'
 zinit ice wait if'(( $+commands[python] ))' lucid
 zinit snippet 'OMZ::plugins/python/python.plugin.zsh'
 
-zinit ice wait if'(( $+commands[rebar] ))' lucid
-zinit snippet 'OMZ::plugins/rebar/rebar.plugin.zsh'
+zinit ice wait as'completion' if'(( $+commands[rebar] ))' lucid
+zinit snippet 'OMZ::plugins/rebar/_rebar'
 
 zinit ice wait if'(( $+commands[rsync] ))' lucid
 zinit snippet 'OMZ::plugins/rsync/rsync.plugin.zsh'
