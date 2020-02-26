@@ -8,8 +8,7 @@ source "$HOME/.zinit/bin/zinit.zsh"
 
 setopt promptsubst
 
-zinit ice svn multisrc'*.zsh' as'null'
-zinit snippet 'OMZ::lib'
+zinit for OMZ::lib/{bzr,clipboard,compfix,completion,correction,diagnostics,directories,functions,git,grep,history,key-bindings,misc,nvm,prompt_info_functions,spectrum,termsupport,theme-and-appearance}.zsh
 
 zinit ice wait as'completion' if'(( $+commands[adb] ))' lucid
 zinit snippet 'OMZ::plugins/adb/_adb'
