@@ -1,7 +1,7 @@
 " 关闭 vi 兼容模式
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
