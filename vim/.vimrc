@@ -4,16 +4,15 @@ set nocompatible
 call plug#begin()
 
 Plug 'junegunn/vim-plug'
+Plug 'sainnhe/sonokai'
+Plug 'sheerun/vim-polyglot'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tomasr/molokai'
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'yko/mojo.vim'
 Plug 'wlangstroth/vim-racket'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'lervag/vimtex'
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'posva/vim-vue'
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 Plug 'leafgarland/typescript-vim'
@@ -49,8 +48,14 @@ set number
 syntax on
 
 " 设定配色方案
-let g:molokai_original=1
-color molokai
+if has('termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+let g:sonokai_style = 'default'
+let g:sonokai_disable_italic_comment = 1
+colorscheme sonokai
 
 " 设置右下角标尺
 set ruler
@@ -212,68 +217,21 @@ autocmd! BufNewFile,BufRead * setlocal nofoldenable
 
 " }}}
 
-if has("gui_running")
-    set guioptions-=m " 隐藏菜单栏
-    set guioptions-=T " 隐藏工具栏
-    set guioptions-=L " 隐藏左侧滚动条
-    set guioptions-=r " 隐藏右侧滚动条
-    set guioptions-=b " 隐藏底部滚动条
-    set showtabline=0 " 隐藏Tab栏
-
-    if has("win32")
-        " Windows 兼容配置
-        source $VIMRUNTIME/mswin.vim
-
-        " F11 最大化
-        map <f11> :call libcallnr('fullscreen.dll', 'ToggleFullScreen', 0)<cr>
-
-        " 字体配置
-        set guifont=YaHei_Consolas_Hybrid:h12:cANSI
-        set guifontwide=YaHei_Consolas_Hybrid:h12
-    endif
-
-    if has("unix") && !has('gui_macvim')
+if has('gui_running')
+    if has('win32') || has('win64')
+        source $VIMRUNTIME/delmenu.vim
+        source $VIMRUNTIME/menu.vim
+        set guifont=Cascadia_Code_PL:h12:cANSI:qDRAFT
+        set guifontwide=Cascadia_Code_PL:h12:cANSI:qDRAFT
+    elseif has('unix')
         set guifont=Monaco\ 12
-    endif
-
-    if has("mac") || has("gui_macvim")
-        if has("gui_macvim")
-            " MacVim 下的字体配置
-            set guifont=Monaco:h14
-            set guifontwide=Monaco:h14
-
-            set transparency=2
-            set lines=200 columns=120
-
-            " 使用 MacVim 原生的全屏幕功能
-            set fuopt+=maxhorz
-
-        endif
+    elseif has('mac')
+        set guifont=Monaco:h14
+        set guifontwide=Monaco:h14
     endif
 endif
 
 " {{{ 编码字体设置
-if has("multi_byte")
-    set encoding=utf-8
-    " English messages only
-    "language messages zh_CN.utf-8
-
-    if has('win32')
-        language english
-        let &termencoding=&encoding " 处理consle输出乱码
-    endif
-
-    set fencs=utf-8,gbk,chinese,latin1
-    set formatoptions+=mM
-    set nobomb " 不使用 Unicode 签名
-
-    if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
-        set ambiwidth=double
-    endif
-else
-    echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
-endif
-
 set termencoding=utf-8
 set fileencodings=ucs-bom,utf-8,shift-jis,cp936,cp950,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
@@ -286,18 +244,43 @@ let g:NERDTreeMinimalUI=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap nc :NERDTreeTabsToggle<cr>
 
-" vim-perl
-au BufNewFile,BufRead *.tt setf tt2html
+" lightline
+set laststatus=2
+set noshowmode
+let g:lightline = {'colorscheme' : 'sonokai'}
 
 " vimtex
 let g:tex_flavor = 'latex'
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_compiler_latexmk = {
-    \ 'options' : [
-    \   '-xelatex',
-    \   '-verbose',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ],
+if has('win32') || has('win64')
+    let g:vimtex_view_general_viewer = 'SumatraPDF'
+    let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+    let g:vimtex_view_general_options
+        \ = '-reuse-instance -forward-search @tex @line @pdf'
+        \ . ' -inverse-search "' . exepath(v:progpath)
+        \ . ' --servername ' . v:servername
+        \ . ' --remote-send \"^<C-\^>^<C-n^>'
+        \ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
+        \ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
+        \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
+elseif has('unix')
+    let g:vimtex_view_method = 'zathura'
+    let g:vimtex_compiler_latexmk = {
+        \ 'options' : [
+        \   '-xelatex',
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
+endif
+let g:vimtex_toc_config = {
+    \ 'name' : 'TOC',
+    \ 'layers' : ['content', 'todo', 'include'],
+    \ 'split_width' : 25,
+    \ 'todo_sorted' : 0,
+    \ 'show_help' : 1,
+    \ 'show_numbers' : 1,
     \}
+set conceallevel=1
+let g:tex_conceal='abdmg'
