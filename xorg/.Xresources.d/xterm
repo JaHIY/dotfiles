@@ -38,9 +38,9 @@ xterm*color15: #F8F8F2
 
 xterm*termName: xterm-256color
 
-!xterm*faceName: Monaco:antialias=true:pixelsize=13
-xterm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=14
-xterm*faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=12
+!xterm*faceName: Monaco:antialias=true:pixelsize=15
+xterm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
+xterm*faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=14
 xterm*xftAntialias: true
 xterm*dynamicColors: true
 
