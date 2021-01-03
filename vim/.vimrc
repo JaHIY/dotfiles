@@ -221,10 +221,10 @@ if has('gui_running')
     if has('win32') || has('win64')
         source $VIMRUNTIME/delmenu.vim
         source $VIMRUNTIME/menu.vim
-        set guifont=Cascadia_Code_PL:h12:cANSI:qDRAFT
-        set guifontwide=Cascadia_Code_PL:h12:cANSI:qDRAFT
+        set guifont=Fira_Code:h12:cANSI:qDRAFT
+        set guifontwide=黑体:h12:cANSI:qDRAFT
     elseif has('unix')
-        set guifont=Monaco\ 12
+        set guifont=Fira\ Code\ 12
     elseif has('mac')
         set guifont=Monaco:h14
         set guifontwide=Monaco:h14
