@@ -13,6 +13,8 @@ Plug 'wlangstroth/vim-racket'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'posva/vim-vue'
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 Plug 'leafgarland/typescript-vim'
@@ -221,13 +223,13 @@ if has('gui_running')
     if has('win32') || has('win64')
         source $VIMRUNTIME/delmenu.vim
         source $VIMRUNTIME/menu.vim
-        set guifont=Fira_Code:h12:cANSI:qDRAFT
-        set guifontwide=黑体:h12:cANSI:qDRAFT
+        set guifont=Fira_Code_Retina:h12:cANSI:qDRAFT
+        set guifontwide=Sarasa_Mono_SC:h12:cANSI:qDRAFT
     elseif has('unix')
-        set guifont=Fira\ Code\ 12
+        set guifont=Fira\ Code\ Retina\ 12
+        set guifontwide=Sarasa\ Mono\ SC\ 12
     elseif has('mac')
         set guifont=Monaco:h14
-        set guifontwide=Monaco:h14
     endif
 endif
 
@@ -264,15 +266,6 @@ if has('win32') || has('win64')
         \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
 elseif has('unix')
     let g:vimtex_view_method = 'zathura'
-    let g:vimtex_compiler_latexmk = {
-        \ 'options' : [
-        \   '-xelatex',
-        \   '-verbose',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
 endif
 let g:vimtex_toc_config = {
     \ 'name' : 'TOC',
@@ -284,3 +277,4 @@ let g:vimtex_toc_config = {
     \}
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
