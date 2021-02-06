@@ -48,7 +48,7 @@ set number
 syntax on
 
 " 设定配色方案
-if has('termguicolors')
+if has('termguicolors') && !has('mac')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
