@@ -39,39 +39,41 @@
   t)
 
 ;; set font for chinese characters
-(set-fontset-font
-  t
-  '(#x4e00 . #x9fff)
-  (cond
-    ((string-equal system-type "windows-nt")
-     (cond
-       ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC")
-       ((member "Microsoft YaHei" (font-family-list)) "Microsoft YaHei")
-       ((member "Microsoft JhengHei" (font-family-list)) "Microsoft JhengHei")
-       ((member "SimHei" (font-family-list)) "SimHei")))
-    ((string-equal system-type "darwin")
-     (cond
-       ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC")
-       ((member "Heiti SC" (font-family-list)) "Heiti SC")
-       ((member "Heiti TC" (font-family-list)) "Heiti TC")))
-    ((string-equal system-type "gnu/linux")
-     (cond
-       ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC")
-       ((member "Source Han Sans" (font-family-list)) "Source Han Sans")
-       ((member "WenQuanYi Micro Hei" (font-family-list)) "WenQuanYi Micro Hei")))))
+(when (fboundp 'set-fontset-font)
+  (set-fontset-font
+    t
+    '(#x4e00 . #x9fff)
+    (cond
+      ((string-equal system-type "windows-nt")
+       (cond
+         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC")
+         ((member "Microsoft YaHei" (font-family-list)) "Microsoft YaHei")
+         ((member "Microsoft JhengHei" (font-family-list)) "Microsoft JhengHei")
+         ((member "SimHei" (font-family-list)) "SimHei")))
+      ((string-equal system-type "darwin")
+       (cond
+         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC")
+         ((member "Heiti SC" (font-family-list)) "Heiti SC")
+         ((member "Heiti TC" (font-family-list)) "Heiti TC")))
+      ((string-equal system-type "gnu/linux")
+       (cond
+         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC")
+         ((member "Source Han Sans" (font-family-list)) "Source Han Sans")
+         ((member "WenQuanYi Micro Hei" (font-family-list)) "WenQuanYi Micro Hei"))))))
 
 ;; set font for emoji
-(set-fontset-font
-  t
-  '(#x1f300 . #x1fad0)
-  (cond
-    ((member "Noto Color Emoji" (font-family-list)) "Noto Color Emoji")
-    ((member "Noto Emoji" (font-family-list)) "Noto Emoji")
-    ((member "Segoe UI Emoji" (font-family-list)) "Segoe UI Emoji")
-    ((member "Symbola" (font-family-list)) "Symbola")
-    ((member "Apple Color Emoji" (font-family-list)) "Apple Color Emoji"))
-  ;; Apple Color Emoji should be before Symbola, but Richard Stallman disabled it.
-  ;; GNU Emacs Removes Color Emoji Support on the Mac
-  ;; http://ergoemacs.org/misc/emacs_macos_emoji.html
-  ;;
-  )
+(when (fboundp 'set-fontset-font)
+  (set-fontset-font
+    t
+    '(#x1f300 . #x1fad0)
+    (cond
+      ((member "Noto Color Emoji" (font-family-list)) "Noto Color Emoji")
+      ((member "Noto Emoji" (font-family-list)) "Noto Emoji")
+      ((member "Segoe UI Emoji" (font-family-list)) "Segoe UI Emoji")
+      ((member "Symbola" (font-family-list)) "Symbola")
+      ((member "Apple Color Emoji" (font-family-list)) "Apple Color Emoji"))
+    ;; Apple Color Emoji should be before Symbola, but Richard Stallman disabled it.
+    ;; GNU Emacs Removes Color Emoji Support on the Mac
+    ;; http://ergoemacs.org/misc/emacs_macos_emoji.html
+    ;;
+    ))
