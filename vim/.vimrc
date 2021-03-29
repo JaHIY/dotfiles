@@ -11,12 +11,10 @@ Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'wlangstroth/vim-racket'
 Plug 'elixir-lang/vim-elixir'
-Plug 'elmcast/elm-vim'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'posva/vim-vue'
-Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
@@ -50,7 +48,7 @@ set number
 syntax on
 
 " 设定配色方案
-if has('termguicolors')
+if has('termguicolors') && !has('mac')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
