@@ -1,71 +1,72 @@
 !Molokai theme
-xterm*background: #000000
-xterm*foreground: #F8F8F2
-xterm*cursorColor: #F8F8F2
+XTerm.vt100.background: rgb:00/00/00
+XTerm.vt100.foreground: rgb:f8/f8/f2
+XTerm.vt100.cursorColor: rgb:f8/f8/f2
 
 !Black
-xterm*color0: #000000
-xterm*color8: #262626
+XTerm.vt100.color0: rgb:00/00/00
+XTerm.vt100.color8: rgb:26/26/26
 
 !Red
-xterm*color1: #CD1818
-xterm*color9: #E52222
+XTerm.vt100.color1: rgb:cd/18/18
+XTerm.vt100.color9: rgb:e5/22/22
 
 !Green
-xterm*color2: #90CA1C
-xterm*color10: #A6E22E
+XTerm.vt100.color2: rgb:90/ca/1c
+XTerm.vt100.color10: rgb:a6/e2/2e
 
 !Yellow
-xterm*color3: #E37A02
-xterm*color11: #FD971F
+XTerm.vt100.color3: rgb:e3/7a/02
+XTerm.vt100.color11: rgb:fd/97/1f
 
 !Blue
-xterm*color4: #6F00E6
-xterm*color12: #C48DFF
+XTerm.vt100.color4: rgb:6f/00/e6
+XTerm.vt100.color12: rgb:c4/8d/ff
 
 !Magenta
-xterm*color5: #E00656
-xterm*color13: #F92672
+XTerm.vt100.color5: rgb:e0/06/56
+XTerm.vt100.color13: rgb:f9/26/72
 
 !Cyan
-xterm*color6: #16B1D0
-xterm*color14: #66D9EF
+XTerm.vt100.color6: rgb:16/b1/d0
+XTerm.vt100.color14: rgb:66/d9/ef
 
 !White
-xterm*color7: #E4E4CE
-xterm*color15: #F8F8F2
+XTerm.vt100.color7: rgb:e4/e4/ce
+XTerm.vt100.color15: rgb:f8/f8/f2
 
 
-xterm*termName: xterm-256color
+XTerm.termName: xterm-256color
 
-!xterm*faceName: Monaco:antialias=true:pixelsize=15
-xterm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
-xterm*faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=14
-xterm*xftAntialias: true
-xterm*dynamicColors: true
+!XTerm*faceName: Monaco:antialias=true:pixelsize=15
+XTerm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
+XTerm*faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=14
+XTerm*xftAntialias: true
+XTerm*dynamicColors: true
 
 !fix bug when font is set to DejaVu Sans Mono:14
-xterm*scaleHeight: 1.01
+XTerm*scaleHeight: 1.01
 
-xterm*utf8: 1
-xterm*locale: true
-xterm*utf8Title: true
-xterm*renderFont: true
-xterm*preeditType: Root
-xterm*saveLines: 4096
+XTerm.vt100.utf8: true
+XTerm.vt100.locale: true
+XTerm.vt100.utf8Title: true
+XTerm.vt100.renderFont: true
+XTerm.vt100.preeditType: Root
+XTerm.vt100.saveLines: 4096
 
 !fix alt key input
-xterm*eightBitInput: false
-xterm*metaSendEscape: true
+XTerm.vt100.eightBitInput: false
+XTerm.vt100.metaSendEscape: true
 
-!fix backspace in vim
-xterm.*backarrowKey: false
+!fix backspace in vim and emacs
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
 
-xterm*scrollTtyKeypress: true
-xterm*scrollTtyOutput: false
-xterm*scrollBar: true
-xterm*rightScrollBar: true
-xterm*jumpScroll: true
-xterm*multiScroll: true
-xterm*toolBar: false
+XTerm.vt100.scrollTtyKeypress: true
+XTerm.vt100.scrollTtyOutput: false
+XTerm.vt100.scrollBar: true
+XTerm.vt100.rightScrollBar: true
+XTerm.vt100.jumpScroll: true
+XTerm.vt100.multiScroll: true
+XTerm.vt100.toolBar: false
 
