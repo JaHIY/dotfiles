@@ -1,2 +1,2 @@
-; straight
+;; straight
 (setq package-enable-at-startup nil)
