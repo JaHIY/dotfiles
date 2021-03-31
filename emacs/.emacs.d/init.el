@@ -52,12 +52,12 @@
          ((member "SimHei" (font-family-list)) "SimHei-12")))
       ((eq system-type 'darwin)
        (cond
-         ((member "等距更纱黑体 SC" (font-family-list)) "等距更纱黑体 SC-12")
+         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC-12")
          ((member "Heiti SC" (font-family-list)) "Heiti SC-12")
          ((member "Heiti TC" (font-family-list)) "Heiti TC-12")))
       ((eq system-type 'gnu/linux)
        (cond
-         ((member (encode-coding-string "等距更纱黑体 SC" 'emacs-internal) (font-family-list)) (encode-coding-string "等距更纱黑体 SC-12" 'emacs-internal))
+         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC-12")
          ((member "Source Han Sans" (font-family-list)) "Source Han Sans-12")
          ((member "WenQuanYi Micro Hei" (font-family-list)) "WenQuanYi Micro Hei-12"))))))
 
