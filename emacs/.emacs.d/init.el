@@ -24,17 +24,17 @@
   (cond
     ((eq system-type 'windows-nt)
      (cond
-       ((member "Fira Code Retina" (font-family-list)) "Fira Code Retina-12")
-       ((member "Consolas" (font-family-list)) "Consolas-12")))
+       ((find-font (font-spec :name "Fira Code Retina")) "Fira Code Retina-12")
+       ((find-font (font-spec :name "Consolas")) "Consolas-12")))
     ((eq system-type 'darwin)
      (cond
-       ((member "Fira Code Retina" (font-family-list)) "Fira Code Retina-12")
-       ((member "Menlo" (font-family-list)) "Menlo-12")
-       ((member "Monaco" (font-family-list)) "Monaco-12")))
+       ((find-font (font-spec :name "Fira Code Retina")) "Fira Code Retina-12")
+       ((find-font (font-spec :name "Menlo")) "Menlo-12")
+       ((find-font (font-spec :name "Monaco")) "Monaco-12")))
     ((eq system-type 'gnu/linux)
      (cond
-       ((member "Fira Code Retina" (font-family-list)) "Fira Code Retina-12")
-       ((member "DejaVu Sans Mono" (font-family-list)) "DejaVu Sans Mono-12"))))
+       ((find-font (font-spec :name "Fira Code Retina")) "Fira Code Retina-12")
+       ((find-font (font-spec :name "DejaVu Sans Mono")) "DejaVu Sans Mono-12"))))
   t
   t)
 
@@ -46,20 +46,20 @@
     (cond
       ((eq system-type 'windows-nt)
        (cond
-         ((member "等距更纱黑体 SC" (font-family-list)) "等距更纱黑体 SC-12")
-         ((member "Microsoft YaHei" (font-family-list)) "Microsoft YaHei-12")
-         ((member "Microsoft JhengHei" (font-family-list)) "Microsoft JhengHei-12")
-         ((member "SimHei" (font-family-list)) "SimHei-12")))
+         ((find-font (font-spec :name "Sarasa Mono SC")) "Sarasa Mono SC-12")
+         ((find-font (font-spec :name "Microsoft YaHei")) "Microsoft YaHei-12")
+         ((find-font (font-spec :name "Microsoft JhengHei")) "Microsoft JhengHei-12")
+         ((find-font (font-spec :name "SimHei")) "SimHei-12")))
       ((eq system-type 'darwin)
        (cond
-         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC-12")
-         ((member "Heiti SC" (font-family-list)) "Heiti SC-12")
-         ((member "Heiti TC" (font-family-list)) "Heiti TC-12")))
+         ((find-font (font-spec :name "Sarasa Mono SC")) "Sarasa Mono SC-12")
+         ((find-font (font-spec :name "Heiti SC")) "Heiti SC-12")
+         ((find-font (font-spec :name "Heiti TC")) "Heiti TC-12")))
       ((eq system-type 'gnu/linux)
        (cond
-         ((member "Sarasa Mono SC" (font-family-list)) "Sarasa Mono SC-12")
-         ((member "Source Han Sans" (font-family-list)) "Source Han Sans-12")
-         ((member "WenQuanYi Micro Hei" (font-family-list)) "WenQuanYi Micro Hei-12"))))))
+         ((find-font (font-spec :name "Sarasa Mono SC")) "Sarasa Mono SC-12")
+         ((find-font (font-spec :name "Source Han Sans")) "Source Han Sans-12")
+         ((find-font (font-spec :name "WenQuanYi Micro Hei")) "WenQuanYi Micro Hei-12"))))))
 
 ;; set font for emoji
 (when (fboundp 'set-fontset-font)
@@ -67,11 +67,11 @@
     t
     '(#x1f300 . #x1fad0)
     (cond
-      ((member "Noto Color Emoji" (font-family-list)) "Noto Color Emoji-12")
-      ((member "Noto Emoji" (font-family-list)) "Noto Emoji-12")
-      ((member "Segoe UI Emoji" (font-family-list)) "Segoe UI Emoji-12")
-      ((member "Symbola" (font-family-list)) "Symbola-12")
-      ((member "Apple Color Emoji" (font-family-list)) "Apple Color Emoji-12"))
+      ((find-font (font-spec :name "Noto Color Emoji")) "Noto Color Emoji-12")
+      ((find-font (font-spec :name "Noto Emoji")) "Noto Emoji-12")
+      ((find-font (font-spec :name "Segoe UI Emoji")) "Segoe UI Emoji-12")
+      ((find-font (font-spec :name "Symbola")) "Symbola-12")
+      ((find-font (font-spec :name "Apple Color Emoji")) "Apple Color Emoji-12"))
     ;; Apple Color Emoji should be before Symbola, but Richard Stallman disabled it.
     ;; GNU Emacs Removes Color Emoji Support on the Mac
     ;; http://ergoemacs.org/misc/emacs_macos_emoji.html
