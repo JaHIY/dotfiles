@@ -35,7 +35,7 @@
   (setq use-package-verbose t))
 
 (use-package monokai-theme
-             :config
+             :init
              (load-theme 'monokai t))
 
 (use-package emacs
