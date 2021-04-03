@@ -2,6 +2,9 @@
 ;; collection.  The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
 
+;; disable startup message
+(setq inhibit-startup-message t)
+
 (prefer-coding-system 'utf-8)
 
 (when (eq system-type 'windows-nt)
