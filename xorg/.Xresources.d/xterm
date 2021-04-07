@@ -38,14 +38,14 @@ XTerm.vt100.color15: rgb:f8/f8/f2
 
 XTerm.termName: xterm-256color
 
-!XTerm*faceName: Monaco:antialias=true:pixelsize=15
-XTerm*faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
-XTerm*faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=14
-XTerm*xftAntialias: true
-XTerm*dynamicColors: true
+!XTerm.vt100.faceName: Monaco:antialias=true:pixelsize=15
+XTerm.vt100.faceName: DejaVu Sans Mono:antialias=true:pixelsize=16
+XTerm.vt100.faceNameDoublesize: Source Han Sans:antialias=true:pixelsize=14
+XTerm.vt100.xftAntialias: true
+XTerm.vt100.dynamicColors: true
 
 !fix bug when font is set to DejaVu Sans Mono:14
-XTerm*scaleHeight: 1.01
+XTerm.vt100.scaleHeight: 1.01
 
 XTerm.vt100.utf8: true
 XTerm.vt100.locale: true
@@ -69,4 +69,5 @@ XTerm.vt100.rightScrollBar: true
 XTerm.vt100.jumpScroll: true
 XTerm.vt100.multiScroll: true
 XTerm.vt100.toolBar: false
+XTerm.vt100.modifyOtherKeys: 1
 
