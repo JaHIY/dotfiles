@@ -1,1 +1,2 @@
+#include ".Xresources.d/uxterm"
 #include ".Xresources.d/xterm"
