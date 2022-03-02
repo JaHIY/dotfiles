@@ -13,9 +13,6 @@ zinit for OMZ::lib/{bzr,clipboard,compfix,completion,correction,diagnostics,dire
 zinit ice wait as'completion' if'(( $+commands[adb] ))' lucid
 zinit snippet 'OMZ::plugins/adb/_adb'
 
-zinit ice wait if'(( $+commands[ant] ))' lucid
-zinit snippet 'OMZ::plugins/ant/ant.plugin.zsh'
-
 zinit ice wait if"grep -s -q -F 'Arch Linux' /etc/os-release" lucid
 zinit snippet 'OMZ::plugins/archlinux/archlinux.plugin.zsh'
 
@@ -27,12 +24,6 @@ zinit snippet 'OMZ::plugins/command-not-found/command-not-found.plugin.zsh'
 
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/common-aliases/common-aliases.plugin.zsh'
-
-zinit ice wait lucid
-zinit snippet 'OMZ::plugins/copydir/copydir.plugin.zsh'
-
-zinit ice wait lucid
-zinit snippet 'OMZ::plugins/copyfile/copyfile.plugin.zsh'
 
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/cp/cp.plugin.zsh'
@@ -55,17 +46,8 @@ zinit snippet 'OMZ::plugins/gnu-utils/gnu-utils.plugin.zsh'
 zinit ice wait if'(( $+commands[go] ))' lucid
 zinit snippet 'OMZ::plugins/golang/golang.plugin.zsh'
 
-zinit ice wait if'(( $+commands[gradle] ))' lucid
-zinit snippet 'OMZ::plugins/gradle/gradle.plugin.zsh'
-
-zinit ice wait if'(( $+commands[httpie] ))' lucid
-zinit snippet 'OMZ::plugins/httpie/httpie.plugin.zsh'
-
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/jsontools/jsontools.plugin.zsh'
-
-zinit ice wait as'completion' if'(( $+commands[lein] ))' lucid
-zinit snippet 'OMZ::plugins/lein/_lein'
 
 zinit ice wait if'(( $+commands[hg] ))' lucid
 zinit snippet 'OMZ::plugins/mercurial/mercurial.plugin.zsh'
@@ -87,18 +69,6 @@ zinit snippet 'OMZ::plugins/rsync/rsync.plugin.zsh'
 
 zinit ice wait if'(( $+commands[ruby] ))' lucid
 zinit snippet 'OMZ::plugins/ruby/ruby.plugin.zsh'
-
-zinit ice wait as'completion' if'(( $+commands[rustc] ))' lucid
-zinit snippet 'OMZ::plugins/rust/_rust'
-
-zinit ice wait if'(( $+commands[rvm] ))' lucid
-zinit snippet 'OMZ::plugins/rvm/rvm.plugin.zsh'
-
-zinit ice wait if'(( $+commands[sbt] ))' lucid
-zinit snippet 'OMZ::plugins/sbt/sbt.plugin.zsh'
-
-zinit ice wait as'completion' if'(( $+commands[scala] ))' lucid
-zinit snippet 'OMZ::plugins/scala/_scala'
 
 zinit ice wait if'(( $+commands[screen] ))' lucid
 zinit snippet 'OMZ::plugins/screen/screen.plugin.zsh'
