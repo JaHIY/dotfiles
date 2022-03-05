@@ -94,9 +94,6 @@ zinit snippet 'OMZ::plugins/torrent/torrent.plugin.zsh'
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/urltools/urltools.plugin.zsh'
 
-zinit ice wait lucid
-zinit snippet 'OMZ::plugins/zsh_reload/zsh_reload.plugin.zsh'
-
 zinit ice pick'async.zsh' src'pure.zsh'
 zinit light 'sindresorhus/pure'
 zstyle ':prompt:pure:execution_time' color yellow
