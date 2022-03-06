@@ -45,7 +45,8 @@
 (use-package emacs
              :config
              (setq display-line-numbers-type t)
-             (global-display-line-numbers-mode t))
+             (global-display-line-numbers-mode t)
+             (global-hl-line-mode 1))
 
 (use-package emacs
              :config
@@ -55,6 +56,13 @@
              (defvaralias 'cperl-indent-level 'tab-width)
              ;; make indent commands use space only (never tab character)
              (setq-default indent-tabs-mode nil))
+
+(use-package emacs
+             :unless (display-graphic-p)
+             :config
+             (menu-bar-mode -1)
+             (tool-bar-mode -1)
+             (scroll-bar-mode -1))
 
 (use-package emacs
              :if (display-graphic-p)
