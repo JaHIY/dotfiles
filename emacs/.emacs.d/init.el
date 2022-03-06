@@ -48,6 +48,15 @@
              (global-display-line-numbers-mode t))
 
 (use-package emacs
+             :config
+             ;; set default tab char's display width to 4 spaces
+             (setq-default tab-width 4)
+             (defvaralias 'c-basic-offset 'tab-width)
+             (defvaralias 'cperl-indent-level 'tab-width)
+             ;; make indent commands use space only (never tab character)
+             (setq-default indent-tabs-mode nil))
+
+(use-package emacs
              :if (display-graphic-p)
              :config
              ;; set default font
@@ -108,7 +117,7 @@
                  ;;
                  )))
 
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 140)
 
 ;; Make gc pauses faster by decreasing the threshold.
 (setq gc-cons-threshold (* 2 1000 1000))
