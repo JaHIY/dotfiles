@@ -4,7 +4,8 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 #zinit
-source "$HOME/.zinit/bin/zinit.zsh"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+source "${ZINIT_HOME}/zinit.zsh"
 
 setopt promptsubst
 
