@@ -115,11 +115,10 @@ zstyle ':prompt:pure:virtualenv' color default
 zinit ice wait lucid
 zinit light 'zsh-users/zsh-history-substring-search'
 
-zinit ice wait atload'_zsh_autosuggest_start' lucid
-zinit light 'zsh-users/zsh-autosuggestions'
-
-zinit ice wait atload'zicompinit; zicdreplay' blockf lucid
-zinit light 'zsh-users/zsh-completions'
-
-zinit ice wait atinit'zpcompinit' lucid
-zinit light 'zsh-users/zsh-syntax-highlighting'
+zinit wait lucid for \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    'zdharma-continuum/fast-syntax-highlighting' \
+    blockf \
+    'zsh-users/zsh-completions' \
+    atload"!_zsh_autosuggest_start" \
+    'zsh-users/zsh-autosuggestions'
