@@ -32,7 +32,7 @@
 
 (eval-and-compile
   (setq use-package-always-ensure t) ;不用每个包都手动添加:ensure t关键字
-  (setq use-package-always-defer t) ;默认都是延迟加载，不用每个包都手动添加:defer t
+  (setq use-package-always-defer nil) ;默认加载开关
   (setq use-package-always-demand nil)
   (setq use-package-expand-minimally t)
   (setq use-package-verbose t))
@@ -191,14 +191,12 @@
              (prescient-persist-mode))
 
 (use-package which-key
-             ;; :ensure t
              :diminish which-key-mode
              :config
              (which-key-mode))
 
 ; magit
 (use-package magit
-             ;; :ensure t
              :defer t
              :bind ("C-x g" . magit-status))
 
@@ -349,23 +347,6 @@
              (add-hook 'TeX-after-compilation-finished-functions
                        #'TeX-revert-document-buffer))
 
-(use-package ivy-bibtex
-             :custom
-             (bibtex-completion-bibliography
-               '("~/ref.bib"))
-             (bibtex-completion-library-path '("~/papers"))
-             (bibtex-completion-cite-prompt-for-optional-arguments nil)
-             (bibtex-completion-cite-default-as-initial-input t))
-
-(use-package org-ref
-             :custom
-             (org-ref-default-bibliography "~/ref.bib")
-             (org-ref-pdf-directory "~/papers")
-             (org-ref-completion-library 'org-ref-ivy-cite)
-             :config
-             (require 'org-ref-wos)
-             (require 'doi-utils))
-
 (use-package general
              :config
              (general-evil-setup t))
@@ -379,7 +360,6 @@
   "SPC"  '(try/TeX-command-save-buffer-and-run-all :which-key "latex-save-run")
   "c"  '(try/ivy-bibtex-cite :which-key "ivy-cite")
   "i"   '(try/counsel-insert-file-path :which-key "insert-relative-filepath")
-  "b" '(ivy-bibtex :which-key "ivy-bibtex")
   "t" '(tab-bar-switch-to-tab :which-key "tab-switch-name")
   "o"  '(outshine-imenu :which-key "menu")
   "t"  '(outshine-cycle-buffer :which-key "fold-buffer"))
