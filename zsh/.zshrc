@@ -11,9 +11,6 @@ setopt promptsubst
 
 zinit for OMZ::lib/{bzr,clipboard,compfix,completion,correction,diagnostics,directories,functions,git,grep,history,key-bindings,misc,nvm,prompt_info_functions,spectrum,termsupport,theme-and-appearance}.zsh
 
-zinit ice wait as'completion' if'(( $+commands[adb] ))' lucid
-zinit snippet 'OMZ::plugins/adb/_adb'
-
 zinit ice wait if"grep -s -q -F 'Arch Linux' /etc/os-release" lucid
 zinit snippet 'OMZ::plugins/archlinux/archlinux.plugin.zsh'
 
@@ -62,9 +59,6 @@ zinit snippet 'OMZ::plugins/perl/perl.plugin.zsh'
 zinit ice wait if'(( $+commands[python] ))' lucid
 zinit snippet 'OMZ::plugins/python/python.plugin.zsh'
 
-zinit ice wait as'completion' if'(( $+commands[rebar] ))' lucid
-zinit snippet 'OMZ::plugins/rebar/_rebar'
-
 zinit ice wait if'(( $+commands[rsync] ))' lucid
 zinit snippet 'OMZ::plugins/rsync/rsync.plugin.zsh'
 
@@ -86,8 +80,8 @@ zinit snippet 'OMZ::plugins/systemd/systemd.plugin.zsh'
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/themes/themes.plugin.zsh'
 
-zinit ice wait svn if'(( $+commands[tmux] ))' lucid
-zinit snippet 'OMZ::plugins/tmux'
+zinit ice wait if'(( $+commands[tmux] ))' lucid
+zinit snippet 'OMZ::plugins/tmux/tmux.plugin.zsh'
 
 zinit ice wait lucid
 zinit snippet 'OMZ::plugins/torrent/torrent.plugin.zsh'
